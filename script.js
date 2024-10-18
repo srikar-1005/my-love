@@ -5,73 +5,43 @@ document.addEventListener('DOMContentLoaded', function () {
     const screen2 = document.getElementById('screen2');
     const screen3 = document.getElementById('screen3');
     const birthdayMessage = document.getElementById('birthdayMessage');
+    const tapButton = document.getElementById('tapButton');
     const noButton = document.getElementById('noButton');
     const yesButton = document.getElementById('yesButton');
-    
-    // Function to switch screens with smooth transitions
-    function showScreen(hideScreen, showScreen) {
-        hideScreen.classList.remove('show');
-        hideScreen.style.display = 'none';
-        showScreen.style.display = 'flex';
-        setTimeout(() => showScreen.classList.add('show'), 10);
-    }
 
     // Handle name input and move to screen 2
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         const name = input.value.trim().toLowerCase();
-
-        // Check if name is empty
-        if (!name) {
-            alert("Please enter your name!");
-            return;
-        }
-
-        // Show the birthday screen for "paaru"
+        
         if (name === 'paaru') {
             birthdayMessage.textContent = "Happy Birthday, Paaru!";
-            showScreen(screen1, screen2);
-        } 
-        // Show the maker screen for "srikar"
-        else if (name === 'srikar') {
+        } else if (name === 'srikar') {
             birthdayMessage.textContent = "You are the maker, Srikar!";
-            showScreen(screen1, screen2);
-        } 
-        // Handle invalid names
-        else {
-            alert("Surprise not for you!");
+        } else {
+            birthdayMessage.textContent = `Hello ${name}, you are special!`;
         }
+
+        screen1.style.display = 'none';
+        screen2.style.display = 'flex';
     });
 
-    // Go to screen 3 only if the birthday message is shown
-    screen2.addEventListener('click', function () {
-        if (birthdayMessage.textContent.includes("Happy Birthday")) {
-            showScreen(screen2, screen3);
-        }
+    // Move to screen 3 when the second screen button is clicked
+    tapButton.addEventListener('click', function () {
+        screen2.style.display = 'none';
+        screen3.style.display = 'flex';
     });
 
-    // Randomize the No button's position on hover (desktop)
+    // Randomize the No button's position on hover
     noButton.addEventListener('mouseover', function () {
-        const maxX = window.innerWidth - noButton.clientWidth;
-        const maxY = window.innerHeight - noButton.clientHeight;
-        
-        const randomX = Math.floor(Math.random() * maxX);
-        const randomY = Math.floor(Math.random() * maxY);
-        
-        noButton.style.position = 'absolute';
-        noButton.style.left = `${randomX}px`;
-        noButton.style.top = `${randomY}px`;
-    });
+        const parent = noButton.parentElement;
+        const maxX = parent.offsetWidth - noButton.offsetWidth;
+        const maxY = parent.offsetHeight - noButton.offsetHeight;
 
-    // Randomize the No button's position on touch (mobile)
-    noButton.addEventListener('touchstart', function () {
-        const maxX = window.innerWidth - noButton.clientWidth;
-        const maxY = window.innerHeight - noButton.clientHeight;
-        
-        const randomX = Math.floor(Math.random() * maxX);
-        const randomY = Math.floor(Math.random() * maxY);
-        
-        noButton.style.position = 'absolute';
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
+        noButton.style.position = 'absolute';  // Make sure the button is positioned absolutely
         noButton.style.left = `${randomX}px`;
         noButton.style.top = `${randomY}px`;
     });

@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Form</title>
+    <title>Interactive Birthday Website</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- First screen (Input Form) -->
-    <div id="screen1" class="container show">
+
+    <!-- First Screen: Ask for Name -->
+    <div id="screen1" class="container">
         <div class="box">
-            <p>What is your name according to me?</p>
+            <p>What is your name according to me</p>
             <form id="nameForm">
                 <input type="text" placeholder="Enter your name" id="nameInput" required>
                 <button type="submit">
@@ -20,16 +21,17 @@
         </div>
     </div>
 
-    <!-- Second screen (Birthday message) -->
-    <div id="screen2" class="container">
+    <!-- Second Screen: Display Message -->
+    <div id="screen2" class="container" style="display: none;">
         <div class="box">
-            <p id="birthdayMessage">Happy birthday!</p>
+            <p id="birthdayMessage"></p>
+            <button id="tapButton">Tap on screen</button>
         </div>
     </div>
 
-    <!-- Third screen (Love message with random "No" button) -->
-    <div id="screen3" class="container">
-        <div class="box" id="thirdScreen">
+    <!-- Third Screen: Yes/No Question -->
+    <div id="screen3" class="container" style="display: none;">
+        <div class="box">
             <p>I love you! Do you love me?</p>
             <button id="yesButton">Yes</button>
             <button id="noButton">No</button>
