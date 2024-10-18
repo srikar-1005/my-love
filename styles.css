@@ -8,7 +8,7 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    background-color: #f0f8ff; /* Light blue for visibility */
+    background-color: #ed6fe5;
 }
 
 /* Page container styling */
@@ -114,7 +114,7 @@ input[type="text"] {
     background-color: rgba(144, 238, 144, 0.8); /* Light green balloons */
 }
 .balloon:nth-child(even) {
-    background-color: rgba(30, 144, 255, 0.8); /* Dodger blue balloons */
+    background-color: rgba(78, 202, 255, 0.8); /* Dodger blue balloons */
 }
 
 /* Balloon animations with different durations */
@@ -146,4 +146,37 @@ input[type="text"] {
         transform: translateY(-100vh);
         opacity: 0;
     }
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+}
+
+.box {
+    width: 48%; /* Adjust box width to fit both side by side */
+    border: 2px solid #ff8c00; /* Orange border */
+    border-radius: 20px;
+    padding: 20px;
+    color: #ff8c00; /* Orange text color */
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+p {
+    text-align: center;
+    margin-top: 40px; /* Space between title and content */
+}
+
+/* Separate the boxes */
+#letter {
+    background-color: #ffffff;
+}
+
+#lyrics {
+    background-color: #ffffff;
 }
