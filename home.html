@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- First screen (Input Form) -->
+    <div id="screen1" class="container show">
+        <div class="box">
+            <p>What is your name according to me?</p>
+            <form id="nameForm">
+                <input type="text" placeholder="Enter your name" id="nameInput" required>
+                <button type="submit">
+                    <span class="arrow">→</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Second screen (Birthday message) -->
+    <div id="screen2" class="container">
+        <div class="box">
+            <p id="birthdayMessage">Happy birthday!</p>
+        </div>
+    </div>
+
+    <!-- Third screen (Love message with random "No" button) -->
+    <div id="screen3" class="container">
+        <div class="box" id="thirdScreen">
+            <p>I love you! Do you love me?</p>
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

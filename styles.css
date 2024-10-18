@@ -1,0 +1,108 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212; /* Dark background */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Ensure container takes full viewport height and centers the content */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.container.show {
+    opacity: 1;
+}
+
+.box {
+    text-align: center;
+    border: 2px solid #ff9000; /* Orange border */
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 400px; /* Optional: limits the width for better centering */
+    width: 100%; /* Ensure the box is responsive */
+}
+
+p {
+    color: #ff9000; /* Orange text */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Input Form and Button */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Wrap form elements to fit within the box */
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    border: 2px solid #ff9000;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #ff9000;
+    font-size: 1rem;
+    outline: none;
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid #ff9000;
+    border-radius: 8px;
+    margin-left: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #ff9000;
+}
+
+button:hover {
+    background-color: #ff9000;
+    color: #121212;
+}
+
+input::placeholder {
+    color: #ff9000;
+    opacity: 0.7;
+}
+
+/* Third Screen Buttons */
+#yesButton, #noButton {
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.2rem;
+}
+
+/* Randomize No Button on hover */
+#noButton {
+    position: relative;
+}
+
+#noButton:hover {
+    position: absolute;
+    transition: all 0.2s ease;
+}
+.container-show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
