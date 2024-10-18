@@ -3,39 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Birthday Website</title>
+    <title>Birthday Surprise</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- First Screen: Ask for Name -->
-    <div id="screen1" class="container">
-        <div class="box">
-            <p>What is your name according to me</p>
-            <form id="nameForm">
-                <input type="text" placeholder="Enter your name" id="nameInput" required>
-                <button type="submit">
-                    <span class="arrow">→</span>
-                </button>
-            </form>
-        </div>
+    <!-- Balloon Background Container -->
+    <div id="balloon-container"></div>
+
+    <!-- Page 1: Name Input -->
+    <div id="page1" class="page">
+        <h2>What is your name according to me?</h2>
+        <input type="text" id="userName" placeholder="Enter your name">
+        <button onclick="validateName()">→</button>
+        <p id="errorMessage" class="error hidden"></p>
     </div>
 
-    <!-- Second Screen: Display Message -->
-    <div id="screen2" class="container" style="display: none;">
-        <div class="box">
-            <p id="birthdayMessage"></p>
-            <button id="tapButton">Tap on screen</button>
-        </div>
+    <!-- Page 2: Birthday Greeting -->
+    <div id="page2" class="page hidden" onclick="goToPage3()">
+        <h1 class="birthdayText" id="displayName"></h1>
     </div>
 
-    <!-- Third Screen: Yes/No Question -->
-    <div id="screen3" class="container" style="display: none;">
-        <div class="box">
-            <p>I love you! Do you love me?</p>
-            <button id="yesButton">Yes</button>
-            <button id="noButton">No</button>
-        </div>
+    <!-- Page 3: Do you love me? -->
+    <div id="page3" class="page hidden">
+        <h2>I love you! Do you love me?</h2>
+        <button onclick="handleAnswer('yes')">Yes</button>
+        <button id="noButton" onclick="handleAnswer('no')">No</button>
+    </div>
+
+    <!-- Page 4: Final Response -->
+    <div id="page4" class="page hidden">
+        <h2>I'm so happy to hear that! ❤️</h2>
     </div>
 
     <script src="script.js"></script>
