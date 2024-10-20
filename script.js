@@ -39,8 +39,7 @@ function generateFlowers() {
     }
 }
 
-    }
-}
+    
 
 // Function to handle the 'Yes' and 'No' buttons on the third page
 // Handle the user's answer (Yes or No)
