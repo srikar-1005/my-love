@@ -29,14 +29,16 @@ function goToPage3() {
     document.getElementById('page3').classList.remove('hidden'); // Show the third page
 }
 
-// Function to generate random balloons for the animated background on the second page
-function generateBalloons() {
-    const container = document.getElementById('balloon-container');
+function generateFlowers() {
+    const container = document.getElementById('flower-container');
     for (let i = 0; i < 30; i++) {
-        const balloon = document.createElement('div');
-        balloon.classList.add('balloon');
-        balloon.style.setProperty('--randomX', Math.random()); // Random horizontal position for balloons
-        container.appendChild(balloon);
+        const flower = document.createElement('div');
+        flower.classList.add('flower');
+        flower.style.setProperty('--randomX', Math.random());
+        container.appendChild(flower);
+    }
+}
+
     }
 }
 
