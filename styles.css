@@ -86,54 +86,35 @@ input[type="text"] {
     }
 }
 
-/* Confetti or Balloon Background Animation */
-#balloon-container {
+/* Flower Background Animation */
+#flower-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: -1; /* Make sure it stays in the background */
+    z-index: -1;
     overflow: hidden;
     background-color: #f0f8ff; /* Light background for visibility */
 }
 
-/* Individual Balloons */
-.balloon {
+/* Individual Flowers */
+.flower {
     position: absolute;
-    width: 60px;
-    height: 80px;
-    background-color: rgba(255, 99, 71, 0.8); /* Tomato red balloons */
-    border-radius: 50% 50% 50% 50%;
+    width: 50px; /* Adjust flower size */
+    height: 50px; /* Adjust flower size */
+    background-image: url('path_to_flower_image.png'); /* Add your flower image */
+    background-size: cover;
     animation: float 10s linear infinite;
     opacity: 0;
 }
 
-/* Different balloon colors */
-.balloon:nth-child(odd) {
-    background-color: rgba(144, 238, 144, 0.8); /* Light green balloons */
-}
-.balloon:nth-child(even) {
-    background-color: rgba(78, 202, 255, 0.8); /* Dodger blue balloons */
-}
-
-/* Balloon animations with different durations */
-.balloon:nth-child(3n) {
-    animation-duration: 12s;
-}
-.balloon:nth-child(4n) {
-    animation-duration: 15s;
-}
-.balloon:nth-child(5n) {
-    animation-duration: 20s;
-}
-
-/* Random balloon positioning */
-.balloon {
+/* Random flower positioning */
+.flower {
     left: calc(100vw * var(--randomX)); /* Use a CSS variable for random placement */
 }
 
-/* Animation for balloon floating */
+/* Animation for flower floating */
 @keyframes float {
     0% {
         transform: translateY(100vh);
@@ -146,37 +127,4 @@ input[type="text"] {
         transform: translateY(-100vh);
         opacity: 0;
     }
-}
-.container {
-    display: flex;
-    justify-content: space-between;
-    width: 80vw;
-}
-
-.box {
-    width: 48%; /* Adjust box width to fit both side by side */
-    border: 2px solid #ff8c00; /* Orange border */
-    border-radius: 20px;
-    padding: 20px;
-    color: #ff8c00; /* Orange text color */
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-p {
-    text-align: center;
-    margin-top: 40px; /* Space between title and content */
-}
-
-/* Separate the boxes */
-#letter {
-    background-color: #ffffff;
-}
-
-#lyrics {
-    background-color: #ffffff;
 }
