@@ -1,32 +1,39 @@
 // Function to validate name input on the first page
 function validateName() {
-    const name = document.getElementById('userName').value.toLowerCase(); // Convert to lowercase for easier comparison
+    const name = document.getElementById('userName').value.toLowerCase();
     const errorMessage = document.getElementById('errorMessage');
 
     if (name === 'paaru') {
         goToPage2(); // Transition to page 2 if 'paaru' is entered
     } else if (name === 'srikar') {
-        errorMessage.innerText = 'The maker of the website'; // Show custom message for 'srikar'
+        errorMessage.innerText = 'The maker of the website';
         errorMessage.classList.remove('hidden');
     } else {
-        errorMessage.innerText = 'Surprise is not for you'; // Show error message for incorrect input
+        errorMessage.innerText = 'Surprise is not for you';
         errorMessage.classList.remove('hidden');
     }
 }
 
 // Function to go to the second page
 function goToPage2() {
-    const name = document.getElementById('userName').value; // Get the entered name
-    document.getElementById('displayName').innerText = `Happy Birthday ${name}!`; // Show name on the second page
+    const name = document.getElementById('userName').value;
+    document.getElementById('displayName').innerText = `Happy Birthday ${name}!`;
     document.getElementById('page1').classList.add('hidden'); // Hide the first page
     document.getElementById('page2').classList.remove('hidden'); // Show the second page
-    generateBalloons(); // Generate balloons for the background animation
+    generateBalloons();
 }
 
-// Function to go to the third page when clicking anywhere on the second page
+// Function to go to the third page and play music
 function goToPage3() {
     document.getElementById('page2').classList.add('hidden'); // Hide the second page
     document.getElementById('page3').classList.remove('hidden'); // Show the third page
+
+    // Create and configure audio element for background music
+    const audio = new Audio("srikarmylove.mp3"); // Update with the actual path to your audio file
+    audio.loop = true; // Make the audio loop
+
+    // Attempt to play the audio
+    audio.play().catch(error => console.log("Autoplay blocked:", error));
 }
 
 // Function to generate random balloons for the animated background on the second page
@@ -40,24 +47,20 @@ function generateBalloons() {
     }
 }
 
-// Function to handle the 'Yes' and 'No' buttons on the third page
-// Handle the user's answer (Yes or No)
+// Function to handle 'Yes' and 'No' buttons on the third page
 function handleAnswer(answer) {
     if (answer === 'yes') {
         alert('Yay! I love you too!');
-
-        // Move to the final page
         setTimeout(() => {
             document.getElementById('page3').classList.add('hidden');
             document.getElementById('page4').classList.remove('hidden');
         }, 1000);
     } else {
-        randomizeNoButton();  // Randomize "No" button if the answer is "no"
+        randomizeNoButton();
     }
 }
 
-function randomizeNoButton() 
-{
+function randomizeNoButton() {
     const noButton = document.getElementById('noButton');
     const randomX = Math.floor(Math.random() * 300) + 'px';
     const randomY = Math.floor(Math.random() * 300) + 'px';
