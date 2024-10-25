@@ -29,7 +29,7 @@ function goToPage3() {
     document.getElementById('page3').classList.remove('hidden'); // Show the third page
 }
 
-/ Function to generate random balloons for the animated background on the second page
+// Function to generate random balloons for the animated background on the second page
 function generateBalloons() {
     const container = document.getElementById('balloon-container');
     for (let i = 0; i < 30; i++) {
